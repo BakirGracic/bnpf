@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "49d3a7e0-e21d-4011-bcf1-40c62481c61e",
+		"name": "backend-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31791976"
+	},
+	"item": [
+		{
+			"name": "example_routing",
+			"item": [
+				{
+					"name": "id",
+					"item": [
+						{
+							"name": "resource-specific-get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{domain}}/example_routing/f5906f93-456d-4f70-ae72-c28c54c5b56f",
+									"protocol": "https",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"example_routing",
+										"f5906f93-456d-4f70-ae72-c28c54c5b56f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resource-specific-update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": 123\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{domain}}/example_routing/f5906f93-456d-4f70-ae72-c28c54c5b56f",
+									"protocol": "https",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"example_routing",
+										"f5906f93-456d-4f70-ae72-c28c54c5b56f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resource-specific-delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{domain}}/example_routing/f5906f93-456d-4f70-ae72-c28c54c5b56f",
+									"protocol": "https",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"example_routing",
+										"f5906f93-456d-4f70-ae72-c28c54c5b56f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "resource-get-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{domain}}/example_routing/",
+							"protocol": "https",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"example_routing",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resource-create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": 123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{domain}}/example_routing/",
+							"protocol": "https",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"example_routing",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Debug GET parameter on every request",
+					"const debugParamKey = 'debug';",
+					"const debugParamValue = pm.collectionVariables.get(\"debug_token\");",
+					"pm.request.url.query.add({key: debugParamKey, value: debugParamValue});",
+					"// Send User Geolocation headers on every request",
+					"pm.request.headers.add(\"X-Geo-Country: Bosnia and Herzegovina\");",
+					"pm.request.headers.add(\"X-Geo-Country_Code: BA\");",
+					"pm.request.headers.add(\"X-Geo-Region: BiH\");",
+					"pm.request.headers.add(\"X-Geo-Region_Name: Federation of Bosnia and Herzegovina\");",
+					"pm.request.headers.add(\"X-Geo-City: Sarajevo\");",
+					"pm.request.headers.add(\"X-Geo-ZIP: 71000\");",
+					"pm.request.headers.add(\"X-Geo-Latitude: 43.8563\");",
+					"pm.request.headers.add(\"X-Geo-Longitute: 18.4131\");",
+					"pm.request.headers.add(\"X-Geo-Timezone: Europe/Sarajevo\");",
+					"// Send user browser fingerprint",
+					"pm.request.headers.add(\"User-Browser-Fingerprint: ad2c814ce25e3b23afe3fbd1bdb72adb2b75ec8d7b2c2a737375194f99749dc2\");",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "api.domain.com",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "TOKEN_HERE",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "TOKEN_HERE",
+			"type": "string"
+		},
+		{
+			"key": "debug_token",
+			"value": "DEBUG_TOKEN_HERE",
+			"type": "string"
+		}
+	]
+}
