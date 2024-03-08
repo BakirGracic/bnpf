@@ -1,0 +1,16 @@
+# Route all requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    # EXCEPTIONS
+    RewriteCond %{REQUEST_URI} !^/robots.txt
+    RewriteCond %{REQUEST_URI} !^/favicon.ico
+    
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>
+
+# Allow all authorization headers
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
