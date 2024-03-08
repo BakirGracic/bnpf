@@ -3,19 +3,19 @@ vendor
 composer.lock 
 
 # Client/server specific
-utils/backups/code
-utils/backups/logs
-utils/backups/mysql
-utils/logs/api
-utils/logs/errors
-uploads
-jobs/log/completed
-jobs/log/failed
+utils/backups/code/*
+utils/backups/logs/*
+utils/backups/mysql/*
+utils/logs/api/*
+utils/logs/errors/*
+uploads/*
+jobs/log/completed/*
+jobs/log/failed/*
 
 # API 
 api/*
 !api/example_endpoint.php
-!api/example_routing
+!api/example_routing/
 
 # IDE
 .idea

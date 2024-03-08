@@ -1,7 +1,7 @@
 # Boring Name PHP Framework (BNPF)
 
 ### Current Version
-v0.1.0
+v0.1.1
 
 ### Introduction
 Plain PHP, procedural (no OOP), RESTful, backend API framework
@@ -53,3 +53,6 @@ I made this framework for my back-end needs to have as a great tool and to learn
 
 ### Contributing
 Feel free to contribute howevery you like. I'd like you to point to mistakes, any type of errors, my stupidity if present, possible improvements, etc. Thanks for reading this far!
+
+### License
+MIT License - Use for your commercial and non-commercial needs, but attribution is required
