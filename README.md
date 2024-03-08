@@ -1,7 +1,7 @@
 # Boring Name PHP Framework (BNPF)
 
 ### Current Version
-v0.1.1
+v0.1.2
 
 ### Introduction
 Plain PHP, procedural (no OOP), RESTful, backend API framework
